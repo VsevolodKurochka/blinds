@@ -1483,6 +1483,9 @@ End:  HEADER
   border-bottom: 1px solid #f0f0f0;
 }
 
+.editor-section {
+  padding-bottom: 0;
+}
 .editor-image {
   font-size: 0;
   float: left;

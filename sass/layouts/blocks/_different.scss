@@ -73,6 +73,9 @@ $border-value: 1px solid setColor(black, darker);
   }
 }
 .editor{
+  &-section{
+    padding-bottom: 0;
+  }
   &-image{
     font-size: 0;
     float: left;
