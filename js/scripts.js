@@ -83,6 +83,45 @@ $(document).ready(function(){
 				}
 			}
 		});
+
+		//CALCULATOR
+		$(".calc-list-b").each(function(){
+			var calcNameAttr = $(this).attr("data-name");
+			if ( calcNameAttr ) {
+				var calcListName = $("<div />", {
+					class: "calc-list-name",
+					text: calcNameAttr
+				});
+				$(this).append(calcListName);
+			}
+		});
+		$(".calc-list-b").click(function(){
+			$(".calc-list li").removeClass("active").removeAttr("id");
+			$(this).toggleClass("active").attr("id", "choosen-material");
+		});
+		$("#check").click(function(){
+			if ( $("#choosen-material").length > 0 ) { 
+				var price;
+				if ( $("#choosen-material").attr("data-price") ){
+					price = $("#choosen-material").attr("data-price");
+				}
+				var height 			= $("#height").val(),
+						width 			= $("#width").val(),
+						quadrature 	= height * width,
+						total      	= quadrature * price;
+
+				$("#quadrature").show();
+				$("#totalQuadrature").html(quadrature);
+				$("#full-price").show();
+				$("#total-price").html(total);
+			}else{
+				$(".calc-error-material").addClass("active");
+				setTimeout(function(){
+					$(".calc-error-material").removeClass("active");
+				}, 4000);
+			}
+		});
+
 		//DEVELOPE
 		// var widthDevice = $(window).width();
 		// $(".development").html(widthDevice);

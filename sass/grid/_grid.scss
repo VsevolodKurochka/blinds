@@ -8,8 +8,11 @@ Start: COLUMNS
 @include resp-min(md){
   @include make-column(md,"not-push","not-pull","not-offset");
 }
-@include resp-min(lg){
-  @include make-column(lg,"not-push","not-pull","not-offset");
+@include resp-min(deflg){
+  @include make-column(deflg,"not-push","not-pull","not-offset");
+}
+@include resp-min(biglg){
+  @include make-column(biglg,"not-push","not-pull","not-offset");
 }
 
 /* =====================
@@ -19,6 +22,9 @@ End:  COLUMNS
 /* ===================== 
 Start: HIDDEN AND VISIBLE UTILITIES      
 ======================== */
+.dn{
+  display: none;
+}
 %visible{
   display: none !important;
 }
@@ -89,7 +95,7 @@ End:  HIDDEN AND VISIBLE UTILITIES
   float: left;
 }
 
-.vcontainer, .vcontainer-small{
+.vcontainer, .vcontainer-small, .vcontainer-big{
   @extend %global-block;
   @extend .cf;
   @extend .center-block;
@@ -100,13 +106,22 @@ End:  HIDDEN AND VISIBLE UTILITIES
   }
   &-small{
     @include resp-min(lg){
-      width: $container-small;
+      width: 1040px;
+    }
+  }
+  &-big{
+    @media (min-width: 1400px){
+      width: 1360px;
     }
   }
 }
 %padding-block{
   padding-top: 50px;
   padding-bottom: 50px; 
+  @include resp-min(md){
+    padding-top: 75px;
+    padding-bottom: 75px; 
+  }
 }
 .vsection{
   @extend .cf;

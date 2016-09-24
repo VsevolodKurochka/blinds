@@ -1,10 +1,28 @@
 /* ===================== 
 Start: Connect fonts      
 ======================== */
-@include connect-font(ProximaRegular,regular);
-@include connect-font(ProximaBold,bold);
-@include connect-font(ProximaLight,light);
-@include connect-font(ProximaBlack,black_font);
+@font-face {
+  font-family: BebasNeue_Regular;
+  src: local("BebasNeue_Regular"), url(../fonts/BebasNeue_Regular.otf);
+}
+.regularBeb{
+	font-family: BebasNeue_Regular;
+}
+@font-face {
+  font-family: BebasNeue_Bold;
+  src: local("BebasNeue_Bold"), url(../fonts/BebasNeue_Bold.otf);
+}
+.boldBeb{
+	font-family: BebasNeue_Bold;
+}
+.regularRoboto{
+	font-family: 'Roboto', sans-serif;
+}
+.regularRoboto-bold{
+	font-weight: 700;
+}
+// @include connect-font(ProximaLight,light);
+// @include connect-font(ProximaBlack,black_font);
 /* =====================
 End:  Connect fonts
 ======================== */

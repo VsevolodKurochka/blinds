@@ -1,20 +1,174 @@
 .header {
 	@extend .cf;
-	padding: 10px 0 25px;
+	padding: 0 15px;
 	min-height: 50px;
-	@include bg('../img/header.jpg');
-	&-text{
-		@extend .block-inline;
-		padding: 0.5em 0;
-		color: setColor(corp);
-		@extend .bold;
-	}
-	@include resp-max(md){
+	border-bottom: 1px solid #f0f0f0;
+	// &-text{
+	// 	@extend .block-inline;
+	// 	padding: 0.5em 0;
+	// 	color: setColor(corp);
+	// 	@extend .bold;
+	// }
+	@include resp-max(xs){
 		padding-top: 40px;
 	}
-	@include resp-min(md){
-		&-container-text{
-			margin-top: 50px;
+
+	// @include resp-min(md){
+	// 	&-container-text{
+	// 		margin-top: 50px;
+	// 	}
+	// }
+	&-logo{
+		&-wrap{
+			@include resp-max(midlg){
+				@include resp-min(deflg){
+					width: 125px;
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+	&-btns{
+
+		@include resp-min(biglg){
+			text-align: center;
+		}
+		&-inner{
+			
+			display: block;
+			@include resp-min(sm){
+				display: inline-block;
+				margin-right: 10px;
+				&:last-child{
+					margin-right: 0;
+				}
+			}
+			@include resp-max(sm){
+				margin-bottom: 15px;
+				&:last-child{
+					margin-bottom: 0;
+				}
+				.btn{
+					width: 100%;
+				}
+			}
+			
+		}
+	}
+	&-form{
+
+		@include resp-min(deflg){
+			position: absolute;
+		  right: 40px;
+		  top: 25px;
+		  padding: 0;
+		}
+		@include resp-min(biglg){
+			right: 0;
+		}
+	  &-inner{
+	  	text-align: right;
+	  	width: 230px;	
+	  	@include resp-max(lg){
+	  		margin-left: auto;
+	  		margin-right: auto;
+	  	}
+	  }
+	  
+		
+	  form{
+		  width: 172px;
+		  font-size: 0;
+		  margin-left: auto;
+		  @extend .relative;
+	  }
+	  button,
+	  input{
+	  	display: inline-block;
+	  }
+	  input{
+		  width: 172px;
+		  border: 1px solid #cccccc;
+		  height: 33px;
+		  padding-left: 12px;
+		  padding-right: 40px;
+		  @extend .regularRoboto;
+		  &::-webkit-input-placeholder{
+	      color: #333;
+	    }
+	    &:-moz-placeholder {
+	      color: #333;
+	    }
+	    &::-moz-placeholder {
+	      color: #333;
+	    }
+	    &:-ms-input-placeholder {
+	      color: #333;
+	    }
+	  }
+	  button{
+		  width: 30px;
+		  height: 29px;
+		  position: absolute;
+		  right: 2px;
+		  top: 2px;
+		  display: inline-block;
+		  padding: 3px;
+		  background-color: #f0f0f0;
+		  border: 1px solid #fff;
+	  }
+	  
+	  &-title{
+	  	font-size: 16px;
+	  	@include resp-max(midlg){
+  			font-size: 13px;
+  		}
+	  }
+	  &-inner{
+	  	position: relative;
+	  	&:before{
+	  		@include pseudo();
+	  		left: 0;
+	  		top: 50%;
+	  		margin-top: -24.5px;
+	  		width: 49px;
+	  		height: 50px;
+	  		@include bg("../img/phone.png");
+	  	}
+	  }
+	  @include resp-min(midlg){
+			&-inner{
+				width: 270px;	
+			}
+	  	form,
+	  	input{
+	  		width: 206px;
+	  	}
+	  }
+	}
+	&-shadow{
+		display: none;
+	  position: absolute;
+	  left: 50%;
+	  top: 100%;
+	  @include resp-min(sm){
+  	  width: 100%;
+  		margin-left: -50%;
+	  }
+	  @include resp-min(deflg){
+	  	width: 1076px;
+	  	margin-left: -538px;
+	  }
+	}
+	@include resp-max(lg){
+		padding: 15px;
+		&-btns{
+			margin: 15px 0;
+		}
+	}
+	@include resp-min(deflg){
+		&-btns{
+			margin-top: 25px;
 		}
 	}
 }

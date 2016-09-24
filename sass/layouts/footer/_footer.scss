@@ -3,9 +3,16 @@ Start: START FOOTER
 ======================== */
 .footer{
 	@extend .cf;
-	padding: 10px 15px;
-	background-color: #131313;
-	@extend .text-center;
+	
+	@include bg("../img/bgDark.png");
+	color: setColor(light);
+	@include resp-max(md){
+		padding: 40px 0 0 0;
+	}
+	@include resp-min(md){
+		margin-top: 120px;
+		padding: 40px 15px 45px 15px;
+	}
 	&-b{
 		@extend .block-inline;
 		vertical-align: middle;
@@ -14,6 +21,119 @@ Start: START FOOTER
 	a{
 		@extend .tdn;
 		@extend .light !optional;
+	}
+	&-title{
+		@extend .ttu;
+		@extend .block-inline;
+		@extend .relative;
+		@extend .regularBeb;
+		font-size: 38px;
+		&:after{
+			@extend .pseudo;
+			top: 100%;
+			left: 0;
+			width: 100%;
+			height: 3px;
+			background-color: setColor(light);
+		}
+		&-wrap{
+			margin-bottom: 40px;
+		}
+	}
+}
+.icon-b{
+	@extend .relative;
+	&-img{
+		position: absolute;
+		left: -50px;
+		top: 0;
+		width: 40px;
+		height: 50px;
+		text-align: center;
+		&:after{
+			content: "";
+			display: inline-block;
+		}
+
+	}
+	&-margin{
+		margin-bottom: 35px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	@include resp-max(md){
+		padding-top: 45px;
+		&-img{
+			left: 0;
+			text-align: left;
+		}
+		&-margin{
+			margin-bottom: 10px;
+		}
+	}
+}
+.place{
+	&-b{
+		&-img{
+			&:after{
+				width: 27px;
+				height: 38px;
+				@include bg("../img/iconPlace.png");
+			}
+		}
+	}
+}
+.phone{
+	&-b{
+		&-img{
+			&:after{
+				width: 21px;
+				height: 41px;
+				@include bg("../img/iconPhone.png");
+			}
+		}
+	}
+}
+.time{
+	&-b{
+		&-img{
+			&:after{
+				width: 32px;
+				height: 32px;
+				@include bg("../img/iconTime.png");
+			}
+		}
+	}
+}
+.social{
+	&-wrap{
+		margin-top: 38px;
+		@include resp-max(sm){
+			margin-bottom: 38px;
+		}
+	}
+	@extend .block-inline;
+	width: 53px;
+	height: 55px;
+	margin-right: 14px;
+	&:last-child{
+		margin-right: 0;
+	}
+}
+.map{
+	height: 250px;
+	@include resp-min(sm){
+		height: 420px;
+	}
+}
+.copyright{
+	font-size: 13px;
+	@include resp-max(md){
+		padding: 15px 0;
+	}
+	@include resp-min(md){
+		top: -15px;
 	}
 }
 /* =====================

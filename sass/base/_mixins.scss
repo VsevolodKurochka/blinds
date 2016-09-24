@@ -39,7 +39,7 @@ $error: "This variable we do not have, sorry. Please try to change variable";
   @font-face{
     font-family: $font;
     src: local("#{$font}"), 
-    url(../fonts/#{$font}.otf);
+    url(../fonts/#{$font}.woff);
   }
   @if $class_name != null{
     .#{$class_name}{

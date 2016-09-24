@@ -9,12 +9,9 @@
   @extend .relative;
   @extend .block-inline;
   @extend .tdn;
-  @extend .bold;
+  @extend .regularRoboto;
   @extend .transition;
-  @include resp-min(xs){
-    @include size(text_default);
-    padding: 10px 40px;
-  }
+  
   &-effect{
     &:before{
       @extend .pseudo;
@@ -39,8 +36,92 @@
       }   
     } 
   }
-  &-green{
-    background-color: #ddd;
+  &-orange{
+    background-color: #ffa547;
+  }
+  &-special{
+    color: #fff;
+    min-height: 51px;
+    padding: 0 10px 0 25px;
+    &:after{
+      @extend .pseudo;
+      left: 5px;
+      top: 50%;
+    }
+    
+    &-red{
+      background-color: #f92729;
+      &:after{
+        width: 15px;
+        height: 16px;
+        margin-top: -8px;
+        @include bg("../img/iconZ.png");
+      }
+      
+    }
+    &-blue{
+      background-color: #005aab;
+      &:after{
+        width: 15px;
+        height: 16px;
+        margin-top: -8px;
+        @include bg("../img/iconRepair.png");
+      }
+      
+    }
+    &-green{
+      background-color: #7abd06;
+      &:after{
+        width: 15px;
+        height: 14px;
+        margin-top: -7px;
+        @include bg("../img/iconDelivery.png");
+      }
+    }
+    @include resp-min(sm){
+      &-red{
+        @include bg("../img/btn-red.png");
+      }
+      &-blue{
+        @include bg("../img/btn-blue.png");
+      }
+      &-green{
+        @include bg("../img/btn-green.png");
+      }
+    }
+    @include resp-min(midlg){
+      &-red{
+        &:after{
+          width: 30px;
+          height: 30px;
+          margin-top: -15px;
+        }
+      }
+      &-blue{
+        &:after{
+          width: 29px;
+          height: 29px;
+          margin-top: -14.5px;
+        }
+      }
+      &-green{
+        &:after{
+          width: 31px;
+          height: 28px;
+          margin-top: -14px;
+        }
+      }
+    }
+  }
+  &-calc{
+    width: 253px;
+    height: 58px;
+    border: 3px solid #ff6701;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+    background: linear-gradient(to top, #ff740b, #ffab58);
   }
   &-single{
     @include resp-min(sm){
@@ -48,6 +129,12 @@
     }
     @include resp-max(sm){
       margin-top: 35px;
+    }
+  }
+  @include resp-min(midlg){
+    &-special{
+      font-size: 17px;
+      padding: 0 10px 0 45px;
     }
   }
 }

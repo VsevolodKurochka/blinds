@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title></title>
+	<title>Калькулятор</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8">
@@ -10,6 +10,7 @@
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   	<![endif]-->
 	<!-- <script src="js/jquery.js"></script> -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=cyrillic" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<!-- Jquery, Bootstrap, WOW, Masked Input -->
 	<script src="js/min.scripts.js"></script>
@@ -21,64 +22,452 @@
 <body class="body">
 	<main class="main">
 		<header class="header">
-			<div class="vcontainer">
-				<div class="vrow">
-					<div class="vcol-xs-12 vcol-md-4 max-md-center">
-						<div class="header-logo">
+			<div class="vrow">
+				<div class="vcol-xs-12 vcol-deflg-2 text-center header-logo-wrap">
+					<div class="header-logo">
+						<img src="img/logo.png" alt="">
+						<div class="test">
+							<button type="button" class="header-menu-btn btn-menu navbar-toggle">
+	              <span class="icon-bar icon-bar-1"></span>
+	              <span class="icon-bar icon-bar-2"></span>
+	              <span class="icon-bar icon-bar-3"></span>
+	            </button>
+            </div>
+        	</div>
+				</div>
+				<div class="vcol-xs-3 header-menu">
+					<div class="header-inf">
+						<div class="cf header-inf-logo">								
 							<img src="img/logo.png" alt="">
-							<div class="test">
-								<button type="button" class="header-menu-btn btn-menu navbar-toggle">
-		              <span class="icon-bar icon-bar-1"></span>
-		              <span class="icon-bar icon-bar-2"></span>
-		              <span class="icon-bar icon-bar-3"></span>
-		            </button>
-	            </div>
-          	</div>
+							<button type="button" class="header-inf-btn btn-menu"></button>
+						</div>
+						<div class="header-inf-tagline">
+							<p>COMPANY_TAGLINE</p>
+						</div>
 					</div>
-					<div class="vcol-xs-12 vcol-md-3 vpull-md-right text-md-right max-md-center">
-						<div class="header-text">
-							<p>+38 (063) 505 62 63</p>
+					<ul>
+						<li class="active"><a class="anchor-menu" href="#sec0">Главная</a></li>
+						<li><a class="anchor-menu" href="#sec2">Преимущества</a></li>
+						<li><a class="anchor-menu" href="#sec3">Контакты</a></li>
+					</ul>
+				</div>
+				<div class="vcol-xs-12 max-deflg-center vcol-deflg-6 vcol-biglg-5 header-btns-wrap">
+					<div class="header-btns">
+						<div class="header-btns-inner">
+							<button class="btn btn-special btn-special-red">Как произвести замер</button>
 						</div>
-					</div>	
-					<div class="vcol-xs-5 header-menu">
-						<div class="header-inf">
-							<div class="cf header-inf-logo">								
-								<img src="img/logo.png" alt="">
-								<button type="button" class="header-inf-btn btn-menu"></button>
-							</div>
-							<div class="header-inf-tagline">
-								<p>COMPANY_TAGLINE</p>
-							</div>
+						<div class="header-btns-inner">
+							<button class="btn btn-special btn-special-blue">Как установить</button>
 						</div>
-						<ul>
-							<li><a class="anchor-menu" href="#sec0">ТЕСТ</a></li>
-							<li><a class="anchor-menu" href="#sec2">ТЕСТ</a></li>
-							<li><a class="anchor-menu" href="#sec3">ТЕСТ</a></li>
-							<li><a class="anchor-menu" href="#sec4">ТЕСТ</a></li>
-							<li><a class="anchor-menu" href="#sec5">ТЕСТ</a></li>
-						</ul>
+						<div class="header-btns-inner">
+							<button class="btn btn-special btn-special-green">Доставка</button>
+						</div>
 					</div>
 				</div>
+				<div class="vcol-xs-12 vcol-deflg-2 header-form">
+					<div class="header-form-inner">
+						<div class="cf">
+							<form action="">
+								<input type="text" placeholder="ВАШ НОМЕР">
+								<button class="header-form-send"></button>
+							</form>
+						</div>
+						<div class="cf">
+							<p class="header-form-title">Заказать обратный звонок</p>
+						</div>
+					</div>
+				</div>	
 			</div>
+			<img src="img/shadow.png" alt="" class="header-shadow">
 		</header>
-		<section class="vsection" id="sec0">
-			<div class="vcontainer">
-				<div class="vrow">
-					<div class="text-center">
-						<h1 class="h1"></h1>
-						<p class="clicker" data-modal="modal" data-modal-target="#modaltest">Clicker</p>
-						<button class="btn btn-effect btn-orange" data-modal="modal" data-modal-target="#modaltest">Забронировать место в онлайн группе</button>				
+		
+		<section class="vsection">
+			<div class="cf">
+				<h3 class="h3 text-center b-m">редактор штор</h3>
+			</div>
+			<div class="cf bg-grey-light">
+				<div class="vcontainer-big editor-container">
+					<div class="vrow">
+						<div class="cf max-sm-negative">
+							<div class="editor-image">
+								<img src="img/bigImage.png" alt="">
+							</div>
+							<div class="editor-calc">
+								<div class="calc">
+									<div class="calc-inner bg-grey">
+										<p class="calc-title"><span class="quadr quadr-red quadr-material"></span>Выберите материал</p>
+									</div>
+									<div class="calc-inner calc-list-wrap bg-grey-light">
+										<ul class="calc-list">
+											<li class="calc-list-b" data-price="432" data-name="Pastel тк.рулонная крем 2"></li>
+											<li class="calc-list-b" data-price="1"></li>
+											<li class="calc-list-b" data-price="2"></li>
+											<li class="calc-list-b" data-price="3"></li>
+											<li class="calc-list-b" data-price="4"></li>
+											<li class="calc-list-b" data-price="5"></li>
+											<li class="calc-list-b" data-price="6"></li>
+											<li class="calc-list-b" data-price="7"></li>
+											<li class="calc-list-b" data-price="8"></li>
+											<li class="calc-list-b" data-price="9"></li>
+											<li class="calc-list-b" data-price="10"></li>
+											<li class="calc-list-b" data-price="11"></li>
+											<li class="calc-list-b" data-price="12"></li>
+											<li class="calc-list-b" data-price="13"></li>
+											<li class="calc-list-b" data-price="14"></li>
+											<li class="calc-list-b" data-price="15"></li>
+											<li class="calc-list-b" data-price="16"></li>
+											<li class="calc-list-b" data-price="17"></li>
+											<li class="calc-list-b" data-price="18"></li>
+											<li class="calc-list-b" data-price="19"></li>
+										</ul>
+									</div>
+									<div class="calc-inner bg-grey">
+										<p class="calc-title"><span class="quadr quadr-blue quadr-mechanism"></span>Механизм</p>
+										<div class="calc-mechanism radio">
+											<div class="calc-mechanism-inner block-inline">
+												<input type="radio" id="standart" checked="checked" name="mechanism">
+												<label for="standart" class="class-mechanism-name"><span></span>Cтандарт</label>
+											</div>
+											<div class="calc-mechanism-inner block-inline">
+												<input type="radio" id="minicasset" name="mechanism">
+												<label for="minicasset" class="class-mechanism-name"><span></span>Миникассетный</label>
+											</div>
+										</div>
+									</div>
+									<div class="calc-inner calc-size-wrap bg-grey-light">
+										<p class="calc-title"><span class="quadr quadr-pink quadr-size"></span>Размеры</p>
+										<div class="calc-size ">
+											<div class="calc-size-inner block-inline">
+												<label for="height" class="class-mechanism-name">Высота:</label>
+												<input type="text" id="height" name="mechanism" placeholder="" value="10">
+											</div>
+											<div class="calc-size-inner block-inline">
+												<label for="width" class="class-mechanism-name">Ширина:</label>
+												<input type="text" id="width" name="mechanism" placeholder="" value="10">
+											</div>
+										</div>
+									</div>
+									<div class="calc-inner calc-submit bg-grey-light text-center">
+										<button id="check" class="btn-calc btn btn-orange">Заказать</button>
+										<p id="quadrature" class="dn">Квадратура: <span id="totalQuadrature"></span> м<sup>2</sup></p>
+										<p id="full-price" class="bold dn">Общая стоимость: <span id="total-price"></span> UAH</p>
+										<div class="calc-error calc-error-material">Выберите материал!</div>
+									</div>
+								</div>
+							</div>
+						</div><!-- /.cf -->
 					</div>
 				</div>
 			</div>
 		</section>
+		<section class="vsection border-bottom-light">
+			<div class="vcontainer-small">
+				<div class="vrow">
+					<h3 class="h3 text-center b-m">ПРЕИМУЩЕСТВА</h3>
+					<div class="cf advantage-wrap-all">
+						<div class="vcol-xs-12 vcol-sm-6 vcol-md-3 advantage-wrap">
+							<div class="advantage advantage-margin">
+								<div class="advantage-img"><img src="img/adv1.png" alt=""></div>
+								<div class="advantage-title">
+									<p>20 лет работы</p>
+								</div>
+							</div>
+						</div>
+						<div class="vcol-xs-12 vcol-sm-6 vcol-md-3 advantage-wrap">
+							<div class="advantage advantage-margin">
+								<div class="advantage-img"><img src="img/adv2.png" alt=""></div>
+								<div class="advantage-title">
+									<p>Опытные дизайнеры</p>
+								</div>
+							</div>
+						</div>
+						<div class="vcol-xs-12 vcol-sm-6 vcol-md-3 advantage-wrap">
+							<div class="advantage">
+								<div class="advantage-img"><img src="img/adv3.png" alt=""></div>
+								<div class="advantage-title">
+									<p>Качество пошива</p>
+								</div>
+							</div>
+						</div>
+						<div class="vcol-xs-12 vcol-sm-6 vcol-md-3 advantage-wrap">
+							<div class="advantage">
+								<div class="advantage-img"><img src="img/adv4.png" alt=""></div>
+								<div class="advantage-title">
+									<p>Проф. монтаж</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cf">
+						<div class="text-block">
+							<p>За 20 лет работы Мы собрали сильную команду профессионалов, свободно ориентирующихся во всех тонкостях работы с 
+							интерьерным текстилем! </p>
+							<p>Наши дизайнеры обязательно подскажут стиль, форму и фасон штор, ведь выбранная ткань и модель должны лаконично  дополнять внутреннее убранство Вашего дома проедут к Вам с образцами тканей, чтобы Вы могли на месте удостовериться, что она идеально подходит к интерьеру (Выезжаем в любые районы Астраханской области и близлежащих областей) предложат Вам эскизы индивидуального дизайна.</p>
+							<p>Качество пошива не менее важно, чем материал, из которого изготавливаются изделия, поэтому Мы уделяем особое  внимание каждому этапу работ: от раскроя до шитья. А многолетний опыт позволяет нам шить любой сложности шторы,  покрывала и подушки, чехлы на мебель и многое другое!</p>
+							<p>Наши мастера так же быстро и профессионально произведут монтаж карнизов, после которого Вам не придется затевать 
+							генеральную уборку!</p>	
+							С недавних пор мы стали заниматься перетяжкой мягкой мебели. В интерьере все должно гармонировать друг с другом! 
+							Предоставляем услуги по чистке штор!</p>							
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="vsection border-bottom-light">
+			<div class="vcontainer-small">
+				<div class="vrow">	
+					<div class="vrow">
+						<div class="cf">
+							<div class="vcol-xs-12 vcol-md-4 max-md-center">
+								<img src="img/how.png" alt="">
+							</div>
+							<div class="vcol-xs-12 vcol-md-8">
+								<h3 class="h3 max-md-center">Как произвести замер</h3>
+								<p>Наши дизайнеры обязательно подскажут стиль, форму и фасон штор, ведь выбранная ткань и модель должны лаконично дополнять внутреннее убранство Вашего дома проедут к Вам с образцами тканей, чтобы Вы могли на месте удостовериться, что она идеально подходит к интерьеру (Выезжаем в любые районы Астраханской области и близлежащих областей) предложат Вам эскизы индивидуального дизайна.</p>
+								<div class="cf link-pdf-wrap">
+									<a href="" id="" class="link-pdf">Скачать PDF инструкцию</a>
+								</div>
+							</div>
+						</div>
+						<div class="cf stepcheck-wrap">
+							<div class="vcol-xs-12 vcol-sm-6 vcol-md-4 stepcheck">
+								<div class="stepcheck-inner">
+									<p>Мы собрали сильную команду 
+									профессионалов, свободно 
+									ориентирующихся во всех тонкостях 
+									работы с интерьерным текстилем!</p>
+								</div>
+							</div>
+							<div class="vcol-xs-12 vcol-sm-6 vcol-md-4 stepcheck">
+								<div class="stepcheck-inner">
+									<p>Мы собрали сильную команду 
+									профессионалов, свободно 
+									ориентирующихся во всех тонкостях 
+									работы с интерьерным текстилем!</p>
+								</div>
+							</div>
+							<div class="vcol-xs-12 vcol-sm-6 vcol-md-4 stepcheck">
+								<div class="stepcheck-inner">
+									<p>Мы собрали сильную команду 
+									профессионалов, свободно 
+									ориентирующихся во всех тонкостях 
+									работы с интерьерным текстилем!</p>
+								</div>
+							</div>
+							<div class="vcol-xs-12 vcol-sm-6 vcol-md-4 stepcheck">
+								<div class="stepcheck-inner">
+									<p>Мы собрали сильную команду 
+									профессионалов, свободно 
+									ориентирующихся во всех тонкостях 
+									работы с интерьерным текстилем!</p>
+								</div>
+							</div>
+							<div class="vcol-xs-12 vcol-sm-6 vcol-md-4 stepcheck">
+								<div class="stepcheck-inner">
+									<p>Мы собрали сильную команду 
+									профессионалов, свободно 
+									ориентирующихся во всех тонкостях 
+									работы с интерьерным текстилем!</p>
+								</div>
+							</div>
+							<div class="vcol-xs-12 vcol-sm-6 vcol-md-4 stepcheck">
+								<div class="stepcheck-inner">
+									<p>Мы собрали сильную команду 
+									профессионалов, свободно 
+									ориентирующихся во всех тонкостях 
+									работы с интерьерным текстилем!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="vsection border-bottom-light">
+			<div class="vcontainer-small">
+				<div class="vrow">	
+					<div class="vrow">
+						<div class="cf">
+							<div class="vcol-xs-12 vcol-md-4 max-md-center">
+								<img src="img/bigMan.png" alt="">
+							</div>
+							<div class="vcol-xs-12 vcol-md-8">
+								<h3 class="h3 max-md-center">Как установить</h3>
+								<p>Наши дизайнеры обязательно подскажут стиль, форму и фасон штор, ведь выбранная ткань и модель должны лаконично дополнять внутреннее убранство Вашего дома проедут к Вам с образцами тканей, чтобы Вы могли на месте удостовериться, что она идеально подходит к интерьеру (Выезжаем в любые районы Астраханской области и близлежащих областей) предложат Вам эскизы индивидуального дизайна.</p>
+								<div class="cf link-pdf-wrap">
+									<a href="" id="" class="link-pdf">Скачать PDF инструкцию</a>
+								</div>
+							</div>
+						</div>
+						<div class="cf stepcheck-wrap">
+							<div class="vcol-xs-12 vcol-sm-6 vcol-md-4 stepcheck">
+								<div class="stepcheck-inner">
+									<p>Мы собрали сильную команду 
+									профессионалов, свободно 
+									ориентирующихся во всех тонкостях 
+									работы с интерьерным текстилем!</p>
+								</div>
+							</div>
+							<div class="vcol-xs-12 vcol-sm-6 vcol-md-4 stepcheck">
+								<div class="stepcheck-inner">
+									<p>Мы собрали сильную команду 
+									профессионалов, свободно 
+									ориентирующихся во всех тонкостях 
+									работы с интерьерным текстилем!</p>
+								</div>
+							</div>
+							<div class="vcol-xs-12 vcol-sm-6 vcol-md-4 stepcheck">
+								<div class="stepcheck-inner">
+									<p>Мы собрали сильную команду 
+									профессионалов, свободно 
+									ориентирующихся во всех тонкостях 
+									работы с интерьерным текстилем!</p>
+								</div>
+							</div>
+							<div class="vcol-xs-12 vcol-sm-6 vcol-md-4 stepcheck">
+								<div class="stepcheck-inner">
+									<p>Мы собрали сильную команду 
+									профессионалов, свободно 
+									ориентирующихся во всех тонкостях 
+									работы с интерьерным текстилем!</p>
+								</div>
+							</div>
+							<div class="vcol-xs-12 vcol-sm-6 vcol-md-4 stepcheck">
+								<div class="stepcheck-inner">
+									<p>Мы собрали сильную команду 
+									профессионалов, свободно 
+									ориентирующихся во всех тонкостях 
+									работы с интерьерным текстилем!</p>
+								</div>
+							</div>
+							<div class="vcol-xs-12 vcol-sm-6 vcol-md-4 stepcheck">
+								<div class="stepcheck-inner">
+									<p>Мы собрали сильную команду 
+									профессионалов, свободно 
+									ориентирующихся во всех тонкостях 
+									работы с интерьерным текстилем!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="vsection">
+			<div class="vcontainer">
+				<div class="vrow">
+					<h3 class="h3 text-center b-m">Доставка</h3>
+					<div class="cf">
+						<div class="vcol-xs-12 vcol-sm-4 delivery-wrap">
+							<div class="delivery-inner">
+								<div class="delivery-img"><img src="img/dev1.png" alt=""></div>
+								<div class="delivery-title">
+									<p>Заказ</p>
+								</div>
+							</div>
+						</div>
+						<div class="vcol-xs-12 vcol-sm-4 delivery-wrap">
+							<div class="delivery-inner">
+								<div class="delivery-img"><img src="img/dev2.png" alt=""></div>
+								<div class="delivery-title">
+									<p>Подтверждение и упаковка</p>
+								</div>
+							</div>
+						</div>
+						<div class="vcol-xs-12 vcol-sm-4 delivery-wrap">
+							<div class="delivery-inner">
+								<div class="delivery-img"><img src="img/dev3.png" alt=""></div>
+								<div class="delivery-title">
+									<p>Доставка</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="footer">
+			<div class="vcontainer">
+				<div class="vrow">
+					<div class="cf">
+						<div class="vcol-xs-12 vcol-sm-4">
+							<div class="footer-title-wrap">
+								<p class="footer-title">контакты</p>
+							</div>
+							<div class="cf">
+								<div class="icon-b icon-b-margin place-b">
+									<div class="icon-b-inner place-b-inner">
+										<div class="icon-b-img place-b-img"></div>
+										<p class="regularRoboto-bold">Салон штор Леда<br>
+										414000, г. Астрахань, ул. <br>
+										Адмиралтейская, д.32</p>
+									</div>
+								</div>
+								<div class="icon-b icon-b-margin phone-b">
+									<div class="icon-b-inner phone-b-inner">
+										<div class="icon-b-img phone-b-img"></div>
+										<p>тел./факс (8512) 51-13-53,</p>
+										<p>тел. (8512) 63-34-92</p>
+									</div>
+								</div>
+								<div class="icon-b icon-b-margin time-b">
+									<div class="icon-b-inner time-b-inner">
+										<div class="icon-b-img time-b-img"></div>
+										<p>
+										<span class="regularRoboto-bold">График работы:</span> <br>
+										Понедельник - суббота <span class="regularRoboto-bold">9.00-19.00</span> <br>
+										Воскресенье <span class="regularRoboto-bold">9.00-15.00</span>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="cf social-wrap max-sm-center">
+								<div class="social">
+									<a href="" id="" class="social-link">
+										<img src="img/socialVk.png" alt="">
+									</a>
+								</div>
+								<div class="social">
+									<a href="" id="" class="social-link">
+										<img src="img/socialFb.png" alt="">
+									</a>
+								</div>
+								<div class="social">
+									<a href="" id="" class="social-link">
+										<img src="img/socialInst.png" alt="">
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="vcol-xs-12 vcol-sm-8 vcol-deflg-7">
+							
+							<div class="cf max-sm-negative">
+								<div class="cf max-sm-center">
+									<div class="footer-title-wrap">
+										<p class="footer-title">КАРТА ПРОЕЗДА</p>
+									</div>
+								</div>
+								<div class="cf">
+									<div class="map">
+										<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=P306J8T1d7ac5hdJ4K-cNjdKZ9QtQ3Je&amp;width=100%&amp;height=100%&amp;lang=ru_RU&amp;sourceType=constructor&amp;scroll=true"></script>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cf copyright regularRoboto-bold">
+						<div class="vcol-xs-12">
+							<p>«ЛЕДА» САЛОН ШТОР &copy; 2016</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
 	</main>
-	<div class="fixed bottom development">
-		
-	</div>
+	<!-- <div class="fixed bottom development"></div> -->
 	<!-- section.vsection>.vcontainer>.vrow>h3.h3 -->
 <!-- <button class="btn btn-effect btn-orange" data-modal="modal" data-modal-target="#modaltest">Забронировать место в онлайн группе</button> -->
-<div class="vmodal fade" id="modaltest">
+<!-- <div class="vmodal fade" id="modaltest">
   <div class="vmodal-dialog">
     <div class="vmodal-content text-center">
       <div class="vmodal-header">
@@ -99,6 +488,6 @@
       </div>
     </div>
   </div>
-</div>		
+</div>	 -->	
 </body>
 </html>

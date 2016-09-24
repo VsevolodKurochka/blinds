@@ -1,46 +1,3 @@
-.toggle{
-  &-subtitle-no-margin{
-    .subtitle{
-      margin-bottom: 0;
-    }
-  }
-  &-inner{
-    @extend .cf;
-    @include resp-min(sm){
-      &-big-margin{
-       margin-bottom: 150px;
-        &:last-child{
-          margin-bottom: 75px;
-        }
-      }
-      &-small-margin{
-        margin-bottom: 50px;
-        &:last-child{
-          margin-bottom: 0;
-        }
-      }
-    }
-    &-img{
-      @extend .text-center;
-    }
-  }
-  @include resp-min(sm){
-    //ODD - нечетное
-    .toggle-inner-right:nth-child(odd) .toggle-inner-img,
-    .toggle-inner-right:nth-child(even) .toggle-inner-text,
-    .toggle-inner-left:nth-child(odd) .toggle-inner-text,
-    .toggle-inner-left:nth-child(even).toggle-inner-img {      
-        float: right;
-    }
-    .toggle-inner-right:nth-child(even){
-      .toggle-inner-text{
-        .subtitle,p{
-          text-align: right;
-        }
-      }
-    }   
-  }
-}
 .vertical-image{
   &:before{
     content: "";
@@ -72,7 +29,7 @@
     font-size: 15px;
     outline: none;
     box-shadow: 0px 0px 10px 1px rgba(253, 188, 48, 0.17);
-    @extend .regular;
+    @extend .regularRoboto;
     @extend .transition;
     &:focus{
       border-color: setColor(corp);
@@ -95,6 +52,373 @@
   background-color: #000;
   color: #fff;
 }
-.test{
-  @include pseudoBlock();
+// .test{
+//   @include pseudoBlock();
+// }
+.bg{
+  &-grey{
+    background-color: setColor(black,dark);
+    &-light{
+      background-color: setColor(black,light);
+    }
+  }
+}
+$border-value: 1px solid setColor(black, darker);
+.border-bottom{
+  &-dark{
+    border-bottom: $border-value;  
+  }
+  &-light{
+    border-bottom: 1px solid #f0f0f0;
+  }
+}
+.editor{
+  &-image{
+    font-size: 0;
+    float: left;
+    img{
+      height: 100%;
+    }
+  }
+  &-calc{
+    width: 360px;
+    float: right;
+  }
+  @include resp-min(md){
+    @include resp-max(deflg){
+      &-container{
+        width: 976px;
+      }
+      &-image{
+        width: 616px; 
+      }
+    }
+  }
+  @include resp-min(deflg){
+    @media (max-width: 1399px){
+      &-container{
+        width: 1170px;
+      }
+      &-image{
+        width: 810px;
+      }
+    }
+  }
+  @media (min-width: 1400px) {
+    &-calc,
+    &-image{
+      height: 755px;
+    }
+    &-image{
+      width: 1000px;
+    }      
+    
+  }
+}
+.calc{
+  border: $border-value;
+  &-inner{
+    padding: 20px;
+    @extend .relative;
+    @extend .border-bottom-dark;
+    &:last-child{
+      border-bottom: none;
+    }
+  }
+  &-title{
+    font-size: 20px;
+    text-decoration: underline;
+  }
+  &-list{
+    font-size: 0;
+    &-wrap{
+      padding-bottom: 2px;
+    }
+    &-name{
+      position: absolute;
+      min-width: 190px;
+      background-color: #eaa9a9;
+      padding: 5px;
+      top: 100%;
+      left: -1px;
+      font-size: 15px;
+      z-index: 2;
+      visibility: hidden;
+      opacity: 0;
+      @extend .transition;
+    }
+    &-b{
+      @extend .block-inline;
+      @extend .relative;
+      vertical-align: top;
+      width: 45px;
+      height: 45px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      background-color: #d8d253;
+      cursor: pointer;
+      border: 1px solid transparent;
+      &:nth-child(5n){
+        margin-right: 0;
+      }
+      &.active{
+        border-color: #ff3333;
+      }
+      &:hover,
+      &.active{
+        .calc-list-name{
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+    
+  }
+  &-mechanism{
+    &-inner{
+      &:first-child{
+        margin-right: 20px;
+      }
+    }
+  }
+  &-size,
+  &-mechanism{
+    margin-top: 24px;
+  }
+  &-size{
+    &-wrap{
+      padding: 22px 17px;
+    }
+    &-inner{
+      &:first-child{
+        margin-right: 10px;
+      }
+    }
+    label{
+      font-size: 14px;
+    }
+    input{
+      @extend .block-inline;
+      width: 87px;
+      padding-left: 15px;
+      height: 42px;
+      font-size: 16px;
+      @extend .regularRoboto;
+    }
+  }
+  &-submit{
+    padding-top: 28px;
+    padding-bottom: 28px;  
+  }
+  &-error{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 7.5px 0;
+    color: #000;
+    text-align: center;
+    background-color: #ff6060;
+    visibility: hidden;
+    opacity: 0;
+    @extend .transition;
+    &.active{
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+.quadr{
+  width: 38px;
+  height: 38px;
+  margin-right: 12px;
+  @extend .block-inline;
+  @extend .relative;
+  vertical-align: middle;
+  &:after{
+    @extend .pseudo;
+    left: 50%;
+    top: 50%;
+  }
+  &-material{
+    &:after{
+      width: 27px;
+      height: 23px;
+      margin-top: -11.5px;
+      margin-left: -13.5px;
+      @include bg("../img/iconMaterial.png");
+    }
+  }
+  &-mechanism{
+    &:after{
+      width: 26px;
+      height: 19px;
+      margin-top: -9.5px;
+      margin-left: -13px;
+      @include bg("../img/iconMechanism.png");
+    }
+  }
+  &-size{
+    &:after{
+      width: 28px;
+      height: 28px;
+      margin-top: -14px;
+      margin-left: -14px;
+      @include bg("../img/iconSize.png");
+    }
+  }
+  &-red{
+    background-color: #ff3333;
+  }
+  &-blue{
+    background-color: #2945a0;
+  }
+  &-pink{
+    background-color: #ad1fa1;
+  }
+}
+.radio{ 
+  label{
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 30px;
+    font-size: 16px;
+    &:before{
+      content: "";
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      margin-top: -11px;
+      border: 2px solid #000000;
+    }
+    span{
+      display: none;
+      position: absolute;
+      left: 3px;
+      top: 4px;
+      width: 16px;
+      height: 13px;
+      @include bg("../img/check.png");
+    }    
+  }
+  input{
+    &[type=radio]{
+      display: none;
+      &:checked{
+        + label span{
+            display: inline-block;  
+        }
+      }
+    }
+  }
+}
+.advantage{
+  @extend .text-center;
+  &-img{
+    margin-bottom: 5px;
+    font-size: 0;
+  }
+  &-title{
+    font-size: 22px;
+    @extend .regularRoboto-bold;
+  }
+  @include resp-max(md){
+    &-wrap{
+      margin-bottom: 30px;  
+    }
+  }
+  @include resp-min(md){
+    &-wrap-all{
+      margin-bottom: 60px;
+    }
+    &-img{
+      margin-bottom: 23px;
+    }
+  }
+}
+.link{
+  &-pdf{
+    &-wrap{
+      margin-top: 20px;
+    }
+    color: inherit;
+    @extend .tdu;
+    @extend .relative;
+    @extend .block-inline;
+    padding-left: 40px;
+    &:after{
+      @extend .pseudo;
+      width: 27px;
+      height: 32px;
+      left: 0;
+      top: 50%;
+      margin-top: -16px;
+      width: 27px;
+      height: 32px;
+      @include bg("../img/pdf.png");
+    }
+  }
+}
+.stepcheck{
+  
+  &-wrap{
+    margin-top: 30px;
+    @include resp-min(md){
+      margin-top: 64px;
+    }
+  }
+  &-inner{
+    @extend .relative;
+    padding-left: 70px;
+    font-size: 14.17px;
+    &:after{
+      @extend .pseudo;
+      left: 0;
+      top: 50%;
+      margin-top: -28.5px;
+      width: 57px;
+      height: 57px;
+      @include bg("../img/stepcheck.png");
+    }
+  }
+  @include resp-max(sm){
+    margin-bottom: 30px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  @include resp-min(sm){
+    min-height: 140px;
+  }
+}
+.delivery{
+  &-wrap{
+
+  }
+  &-inner{
+    @extend .text-center;
+  }
+  &-img{
+    @extend .vertical-image;
+    margin-bottom: 5px;
+  }
+  &-title{
+    font-size: 22px;
+    @extend .regularRoboto-bold;
+  }
+  @include resp-max(sm){
+    &-wrap{
+      margin-bottom: 30px;
+    }
+  }
+  @include resp-min(sm){
+    &-img{
+      height: 140px;
+      margin-bottom: 15px;
+    }
+  }
 }
