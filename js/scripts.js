@@ -107,7 +107,7 @@ $(document).ready(function(){
 				}
 				var height 			= $("#height").val(),
 						width 			= $("#width").val(),
-						quadrature 	= height * width,
+						quadrature 	= (height * width) / 10000,
 						total      	= quadrature * price;
 
 				$("#quadrature").show();
@@ -121,7 +121,14 @@ $(document).ready(function(){
 				}, 4000);
 			}
 		});
+		// var standartLength = 1253;
+		// for (var i = 0.5; i <= 2; i=i+0.1) {
 
+		// 	console.log( "length " + i.toFixed(1) + " . " + standartLength ) ;
+		// 	for ( var j = standartLength; i <= 1914; j=j+44 ) {
+		// 		console.log(standartLength);
+		// 	}
+		// }
 		//DEVELOPE
 		// var widthDevice = $(window).width();
 		// $(".development").html(widthDevice);
