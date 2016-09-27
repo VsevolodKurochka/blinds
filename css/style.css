@@ -1526,6 +1526,7 @@ End:  HEADER
 
 .calc {
   border: 1px solid #cccccc;
+  height: 100%;
 }
 .calc-inner {
   padding: 20px;
@@ -1709,9 +1710,6 @@ End:  HEADER
   }
 }
 @media (min-width: 1025px) {
-  .advantage-wrap-all {
-    margin-bottom: 60px;
-  }
   .advantage-img {
     margin-bottom: 23px;
   }

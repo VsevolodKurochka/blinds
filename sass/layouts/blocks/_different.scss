@@ -120,6 +120,7 @@ $border-value: 1px solid setColor(black, darker);
 }
 .calc{
   border: $border-value;
+  height: 100%;
   &-inner{
     padding: 20px;
     @extend .relative;
@@ -335,9 +336,9 @@ $border-value: 1px solid setColor(black, darker);
     }
   }
   @include resp-min(md){
-    &-wrap-all{
-      margin-bottom: 60px;
-    }
+    // &-wrap-all{
+    //   margin-bottom: 60px;
+    // }
     &-img{
       margin-bottom: 23px;
     }

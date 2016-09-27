@@ -98,6 +98,10 @@ $(document).ready(function(){
 		$(".calc-list-b").click(function(){
 			$(".calc-list li").removeClass("active").removeAttr("id");
 			$(this).toggleClass("active").attr("id", "choosen-material");
+			var changeBigImage = $(this).attr("data-image");
+			if ( changeBigImage ) {
+				$(".editor-image img").attr("src", changeBigImage);
+			}
 		});
 		$("#check").click(function(){
 			if ( $("#choosen-material").length > 0 ) { 
@@ -109,7 +113,7 @@ $(document).ready(function(){
 						width 			= $("#width").val(),
 						quadrature 	= (height * width) / 10000,
 						total      	= quadrature * price;
-
+				
 				$("#quadrature").show();
 				$("#totalQuadrature").html(quadrature);
 				$("#full-price").show();
@@ -121,14 +125,25 @@ $(document).ready(function(){
 				}, 4000);
 			}
 		});
-		// var standartLength = 1253;
-		// for (var i = 0.5; i <= 2; i=i+0.1) {
+		// $(".calc-mechanism input").click(function(){
+		// 	$(".calc-mechanism input").removeClass();
+		// 	$(this).toggleClass($(this).attr("id"));
+		// });
+		// var standartPrice = [
+		// 	[0.5,1253]
+		// ];
+		//console.log(standartPrice[0][1]);
+		//var standartPrice = [1253,1297,1341,1385,1429,1473,1517,1561,1605,1649,1694,1738,1782,1826,1870,1914];
+		//console.log(standartPrice[1]);
+		for (var i = 0.5; i <= 2; i=i+0.1) {
+			//console.log( "length " + i.toFixed(1) + " . " + standartLength ) ;
+			// for ( var j = 1253; j <= 1914; j=j+44 ) {
+			// 	console.log(j);
+			// }
+			//console.log(i.toFixed(1));
+			//console.log(i.toFixed(1));
+		}
 
-		// 	console.log( "length " + i.toFixed(1) + " . " + standartLength ) ;
-		// 	for ( var j = standartLength; i <= 1914; j=j+44 ) {
-		// 		console.log(standartLength);
-		// 	}
-		// }
 		//DEVELOPE
 		// var widthDevice = $(window).width();
 		// $(".development").html(widthDevice);
